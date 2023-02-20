@@ -2,10 +2,10 @@ package com.brjnptr.todo.service;
 
 import com.brjnptr.todo.entity.TaskEntity;
 import com.brjnptr.todo.repository.TodoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class TodoServiceImp implements TodoService{
 
     private TodoRepository repository;
@@ -17,5 +17,10 @@ public class TodoServiceImp implements TodoService{
     @Override
     public List<TaskEntity> getAllTask() {
         return repository.findAll();
+    }
+
+    @Override
+    public TaskEntity saveTask(TaskEntity task) {
+        return repository.save(task);
     }
 }
