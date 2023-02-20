@@ -23,4 +23,19 @@ public class TodoServiceImp implements TodoService{
     public TaskEntity saveTask(TaskEntity task) {
         return repository.save(task);
     }
+
+    @Override
+    public TaskEntity getTaskById(Long id) {
+        return repository.findById(id).get();
+    }
+
+    @Override
+    public TaskEntity updateTask(TaskEntity task) {
+        return repository.save(task);
+    }
+
+    @Override
+    public void deleteTaskById(Long id) {
+        repository.deleteById(id);
+    }
 }
