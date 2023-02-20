@@ -16,9 +16,9 @@ public class TaskEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @NotBlank
-    @Column(name = "title")
+    @Column(name = "title",nullable = false)
     private String title;
-    @Column(name = "description")
+    @Column(name = "description",nullable = false)
     @NotBlank
     private String description;
 }
